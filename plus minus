@@ -1,0 +1,40 @@
+/* Harry and Larry are now bored playing with numbers. Now they want to play with plus and minus signs. This time they don’t want to give signs one by one. Anyone can give any number of signs at a time but at most N signs. Can you tell the maximum of all signs that they gave sequentially?
+
+For example:
+
+If the input is 7 + + - + - - - , then the answer is 3 as 3 minus signs are given sequentially and it is the maximum.
+If the input is 7 + + + + + - - , then the answer is 5.
+->7
+++++---
+<-4  */
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main()
+{
+    int a,count = 1,max = 1;
+    scanf("%d",&a);
+
+    char b[101];
+    scanf("%s",b);
+
+    for(int i=1;i<a;i++)
+    {
+        if(b[i]==b[i-1])
+        {
+            count++;
+        }
+        else
+        {
+            count = 1;
+        }
+
+        if(max <= count)
+        {
+            max = count;
+        }
+    }
+    printf("%d",max);
+    return 0;
+}
