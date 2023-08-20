@@ -1,0 +1,59 @@
+/* A matrix is a 2D array of numbers arranged in rows and columns. We give you a Matrix of N rows and M columns.
+
+Now your task is to do this operation on this matrix:
+
+If the value matches with the current row and column number then add 3 with the value.
+If the value matches with only the current row number then add 2 with the value.
+If the value matches with only the current column number then add 1 with the value.
+->3 3
+1 1 1
+1 1 1
+1 1 1
+<-4 3 3 
+2 1 1 
+2 1 1 */
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y;
+    scanf("%d%d",&x,&y);
+    int array[101] [101];
+    for(int i=1; i<=y; i++)
+    {
+        for(int j=1; j<=y; j++)
+        {
+            scanf("%d",&array[i][j]);
+        }
+    }
+    for(int i=1; i<=x; i++)
+    {
+        for(int j=1; j<=y; j++)
+        {
+            if(i==array[i][j] && j==array[i][j])
+            {
+                array[i][j] = array[i][j] + 3;
+                printf("%d " ,array[i][j]);
+            }
+            else if(i==array[i][j])
+            {
+                array[i][j] = array[i][j] + 2;
+                printf("%d ",array[i][j]);
+            }
+            else if(j==array[i][j])
+            {
+                array[i][j] = array[i][j] + 1;
+                printf("%d ",array[i][j]);
+            }
+            else
+            {
+                printf("%d ",array[i][j]);
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
