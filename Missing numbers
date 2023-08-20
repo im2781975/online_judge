@@ -1,0 +1,24 @@
+/* Given the sum of four numbers and three of those numbers, find the missing number. All four numbers are positive integers
+->3
+20 2 4 1
+15 5 5 5
+30 10 5 3
+<-
+13
+0
+12  */
+#include <stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int s,a,b,c;
+        scanf("%d%d%d%d",&s,&a,&b,&c);
+        int x = a+b+c;
+        int result = s - x;
+        printf("%d\n",result);
+    }
+    return 0;
+}
