@@ -1,0 +1,29 @@
+/* You are given a string S consisting only +(Addition),*(Multiplication). The next line will contain two positive values.
+
+Now, Calculate the sum of every operations. 
+->+*
+5 10
+<-65 */
+#include <stdio.h>
+int main()
+{
+    char str[21];
+    scanf("%s", str);
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int sum = 0;
+    for(int i = 0; str[i] != '\0'; i++)
+    {
+        if(str[i] == '+')
+        {
+            sum = sum + (a + b);
+        }
+        else
+        {
+            sum = sum + (a * b);
+        }
+    }
+    printf("%d\n", sum);
+
+    return 0;
+}
