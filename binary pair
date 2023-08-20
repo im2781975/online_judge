@@ -1,0 +1,42 @@
+/* You love binary numbers 0 and 1. Now,You are given a binary string S of size N. Now you need to tell total how many 01 and 10 pair exist in the given string.
+->4
+12
+101011111010
+6
+101011
+3
+100
+2
+10
+<-7
+4
+1
+1 */
+#include <stdio.h>
+int main()
+{
+    int T;
+    scanf("%d", &T);
+    for(int i = 0; i < T; i++)
+    {
+        int n;
+        scanf("%d",&n);
+        char str[n + 1];
+        scanf("%s", str);
+        int cnt = 0;
+        for(int i = 0, j = 1; str[j] != '\0'; i++, j++)
+        {
+            if((str[i] == '1') && (str[j] == '0'))
+            {
+                cnt++;
+            }
+            else if((str[i] == '0') && (str[j] == '1'))
+            {
+                cnt++;
+            }
+        }
+        printf("%d\n",cnt);
+
+    }
+    return 0;
+}
