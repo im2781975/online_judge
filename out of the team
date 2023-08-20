@@ -1,0 +1,26 @@
+/*Alien Cricket Board has decided to throw out a player out of the team if his performance is very bad against a match against Bangladesh team. If any player is not able to make at least K runs he will be out of the team. You will be given N, the number of players and the runs that the players were able to take and K, the minimum run that every player needs to take to be in the team. Can you tell the number of players that will be out of the team?
+-> 5 10
+100 25 0 9 10
+<-2 */
+#include <stdio.h>
+int main()
+{
+    int i,p,r,count=0;
+    scanf("%d",&p);
+    scanf("%d",&r);
+    int s[p];
+    for(i=0;i<p;i++)
+    {
+        scanf("%d",&s[i]);
+    }
+    for(i=0;i<p;i++)
+    {
+        if(s[i]<r)
+        {
+            count++;
+        }
+    }
+    printf("%d\n",count);
+
+    return 0;
+}
