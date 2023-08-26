@@ -1,0 +1,35 @@
+/* Count the total unique characters from the string and print them.
+->12
+iuuasdbddqzu
+<-6
+->10
+acckyppomp
+<-5
+*/
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() 
+{
+    int a[27] = {0};
+    int n;
+    scanf("%d",&n);
+    char str[100];
+    scanf("%s",str);
+    int count=0,i=0;
+    while(str[i]!='\0')
+
+    {
+      if(str[i]>='a' && str[i]<='z')
+            a[str[i]-97]++;
+        i++;
+    }
+    for(i=0; i<27; i++)
+    {
+        if(a[i]==1)
+           count++;
+    }
+    printf("%d",count);
+    return 0;
+}
