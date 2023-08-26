@@ -1,0 +1,14 @@
+/* Phitron planned to throw a party for the students. In the party we found that N students are present. However, as a formality we asked each student to shake hands with each other student. You will have to count the number of unique hand-shakes in that party. N will be an input in your C program and the total number of hand-shakes will be the output. Look at the sample input and outputs for clarification
+
+For example, if N=4 then total unique handshakes will be 6.
+->17
+<136 */
+#include<stdio.h>
+int main()
+{
+   long long int n,sum;
+   scanf("%lld",&n);
+   sum = (n*(n-1))/2;
+   printf("%lld",sum);
+   return 0;
+}
