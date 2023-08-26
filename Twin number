@@ -1,0 +1,20 @@
+/* If N is added to twice a number, the sum will be S. What is the number?
+-> 8 20
+<- 6
+->200 500
+<-150 */
+#include <stdio.h>
+int main() {
+
+
+    int n,s,a;
+
+    scanf("%d %d",&n,&s);
+
+    a = s - n;
+
+    printf("%d\n",a/2);
+
+    return 0;
+
+}
