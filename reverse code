@@ -1,0 +1,25 @@
+/*each number [1 – 9] represent [A – I].But if the number is more than one digit it reverse itself.
+->5
+12345 12 21 9999 54321
+<-EDCBA BA AB IIII ABCDE
+->1
+88888
+<-HHHHH */
+#include<stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n;
+        scanf("%d",&n);
+        while(n>0)
+        {
+            printf("%c",64+n%10);
+            n/=10;
+        }
+        printf("\n");
+    }
+    return 0;
+}
