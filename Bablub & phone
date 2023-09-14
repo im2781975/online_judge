@@ -1,6 +1,4 @@
-/* One day Bablu went to the supermarket to buy a new phone. He was eagerly waiting for the launch of the Alien phone. It has a 15000 mAh battery. Finally he bought it! The salesman told him that, if the charge is less than 60% then it will take 1 minute to charge for every 1%. If the charge is less than 80% then it will take 2 minute to charge for every 1%. And finally from 80% it will take 3 minutes to charge 1%.
-
-Now he wants to calculate if the current charge is X% then how many minutes it will take to charge completely. Can you calculate for him?
+/* if the charge is less than 60% then it will take 1 minute to charge for every 1%. If the charge is less than 80% then it will take 2 minute to charge for every 1%. And finally from 80% it will take 3 minutes to charge 1%.if the current charge is X% then how many minutes it will take to charge completely.
 5
 35%
 88%
