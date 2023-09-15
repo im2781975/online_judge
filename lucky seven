@@ -1,65 +1,47 @@
-/* A palindrome is a word whose spelling is the same when we spell it from forward or backward. Your task is to print the word in the given condition:
-
-Case #1: If a word is not a palindrome, then just print “Not Palindrome” without quotations.
-Case #2: If the word is a palindrome and the word is too long if its length is strictly more than 7 characters. All too long words should be replaced with a special abbreviation.
-This abbreviation is made like this: We will write down the first and the last letter of a word and between them - we will write the number of letters between the first and the last letters. That number is in the decimal system and doesn't contain any leading zeroes. Thus, "mmmmmabbammmmm" will be spelled as "m12m".
-
-Case #3: If the word is plaindrome and its length is less than or equal 7 characters.Then, just print the word.
+/* 
+Case #1: If a word is not a palindrome, print “Not Palindrome”.If the word is too long if its length is strictly more than 7 characters. All too long words should be replaced with a special abbreviation.
+Case #3: If the word is plaindrome and its length is less than or equal 7 characters.Then, print the word.
 ->4
 madam
 mmmmmaaaaammmmm
 programminghero
 phitron
-<-Case #3: madam
-Case #2: m13m
-Case #1: Not Palindrome
-Case #1: Not Palindrome */
+<- madam
+ m13m
+ Not Palindrome
+ Not Palindrome */
 #include <stdio.h>
 #include <string.h>
-#include <math.h>
 #include <stdlib.h>
 
-int main()
-{
-
+int main() {
     int damo;
-    scanf("%d",&damo);
-    for(int T = damo ; 0 < T ; T--)
-    {
+    scanf("%d", &damo);
+    
+    for (int T = damo; T > 0; T--) {
         char x[25];
-        char y[25];
-        int a,b;
-        scanf("%s",x);
-        int flag=1;
-        for(a=0, b=strlen(x)-1; a<strlen(x); a++, b--)
-        {
-            y[b]=x[a];
-        }
-        for(a=0,b=0;a<strlen(x);a++,b++)
-        {
-            if(y[b]!=x[a])
-            {
-                flag=0;
+        scanf("%s", x);
+        
+        // Check if the word is a palindrome
+        int isPalindrome = 1;
+        int length = strlen(x);
+        
+        for (int i = 0; i < length / 2; i++) {
+            if (x[i] != x[length - 1 - i]) {
+                isPalindrome = 0;
+                break;
             }
         }
-        if(flag==1)
-        {
-            if(strlen(x)>7)
-            {
-                printf("Case #2: %c%ld%c\n",x[0],strlen(x)-2,x[strlen(x)-1]);
-
+        
+        if (isPalindrome) {
+            if (length > 7) {
+                printf("Case #2: %c%d%c\n", x[0], length - 2, x[length - 1]);
+            } else {
+                printf("Case #3: %s\n", x);
             }
-            else
-            {
-                printf("Case #3: %s\n",x);
-            }
-        }
-        else
-        {
+        } else {
             printf("Case #1: Not Palindrome\n");
         }
-
     }
     return 0;
 }
-
