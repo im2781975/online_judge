@@ -1,0 +1,25 @@
+bool is_palindrome(string str)
+{
+    int n=str.size();
+    int l=0,r=n-1;
+    while(l<r)
+    {
+        if(str[l]!=str[r])
+        {
+            return false;
+        }
+        l++;
+        r--;
+    }
+    return true;
+}
+bool is_palindrome(string str)
+{
+    if(str==" " || str.size()==1)
+    {
+        return true;
+    }
+    int n=str.size();
+    string small_str=str.substr(1,n-2);
+    return is_palindrome(small_str) && (str[0]==str.back());
+}
