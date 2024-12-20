@@ -62,3 +62,12 @@ void Diffrence(){
         cout << dist;
     }
 }
+using namespace std;
+void pattern(){
+    int n; cin >> n;
+    for(int i = 1; i <= n; i++){
+        for(int j = i; j >= 1; j--)
+            cout << j << " ";
+        cout << "\n";
+    }
+}
