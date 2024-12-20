@@ -36,3 +36,21 @@ void pairMatch(){
     }
     cout << cnt;
 }
+using namespace std;
+void binarySearch(){
+    vector <int> vec {2, 6, 8, 10, 12, 14, 15, 18, 19, 28, 30};
+    int low = 0, high = vec.size() - 1;
+    int trg = 15, res = -1;
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+        if(arr[mid] == trg){
+            res = mid;
+            break;
+        }
+        else if(arr[mid] > trg)
+             high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    cout << res;
+}
