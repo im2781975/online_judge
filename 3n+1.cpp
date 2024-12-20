@@ -71,3 +71,8 @@ void pattern(){
         cout << "\n";
     }
 }
+// divide N among 3 people such that every person get the same amount. If possible give same amount to 3 people, print -1 otherwise print the amount.
+void divideAgain(){
+    int x; cin >> x;
+    (x % 3 == 0)? cout << x / 3 ; cout << -1;
+}
