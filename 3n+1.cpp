@@ -76,3 +76,27 @@ void divideAgain(){
     int x; cin >> x;
     (x % 3 == 0)? cout << x / 3 ; cout << -1;
 }
+using namespace std;
+//captain put the notebooks of girls first, and then the boys. captain should keep the boy's notebooks to the left side and then the girl's notebooks. 
+//If the last index of a girl's notebook is K then can you print them in the right order? Note: If K is 0, that means there is no girl's notebook.
+void divideThem(){
+    int n; cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+    int m; cin >> m;
+    //girls notebook
+    for(int i = m; i <= n; i++)
+        cout << arr[i] << " ";
+    //boys botebook
+    for(int i = 0; i < m; i++)
+        cout << arr[i] << " ";
+}
+using namespace std;
+void fifaYear(){
+    int year; cin >> year;
+    if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+        cout << "Yes";
+    else
+        cout << "No";
+}
