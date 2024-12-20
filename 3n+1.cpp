@@ -54,3 +54,11 @@ void binarySearch(){
     }
     cout << res;
 }
+using namespace std;
+void Diffrence(){
+    int a, b; cin >> a >> b;
+    if(a >= 0 && b >= 0 && a <= 100 && b <= 100){
+        int dist = abs(a - b)
+        cout << dist;
+    }
+}
