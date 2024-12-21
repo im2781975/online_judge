@@ -100,3 +100,34 @@ void fifaYear(){
     else
         cout << "No";
 }
+using namespace std;
+void FirstLastIdx(){
+    vector <int> arr{1, 2, 3, 3, 3, 4, 5, 6};
+    int low = 0, high = arr.size() - 1;
+    int trg = 3, firstIdx = -1;
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+        if(arr[mid] == trg){
+            firstIdx = mid;
+            high = mid - 1;
+        }
+        else if(arr[mid] > trg)
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    low = 0, high = arr.size() - 1;
+    int lastIdx = -1;
+    while(low <= high){
+        int mid = low + (high - low) / 2;
+        if(arr[mid] == trg){
+            lastIdx = mid;
+            low = mid + 1;
+        }
+        else if(arr[mid] > trg)
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    cout << firstIdx << " " << lastIdx;
+}
