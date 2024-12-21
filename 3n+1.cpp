@@ -131,3 +131,38 @@ void FirstLastIdx(){
     }
     cout << firstIdx << " " << lastIdx;
 }
+using namespace std;
+// given an array of N positive integers. Find the maximum even value from the array. For finding, can perform only one of the following operations-
+//Choose any even value from the array.
+// Choose any two(must be different) values from the array and perform summation on those two values. If it will even you can pick those two values.
+void pickValue(){
+    int n; cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++)
+        cin >> arr[i];
+    for(int i = 0; i < n - 1; i++){
+        for(int j = i + 1; j < n; j++){
+            if(arr[i] > arr[j]){
+                int tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
+    int res = ans = 0;
+    int evenCnt = oddCnt = 2;
+    for(int i = n - 1; i >= 0; i--){
+        if(arr[i] % 2 == 0 && evenCnt > 0){
+            evenCnt--;
+            res += arr[i];
+        }
+        else if(arr[i] % 2 == 1 && oddCnt > 0){
+            oddCnt--;
+            ans += arr[i];
+        }
+    }
+    if(oddCnt > 0)
+        cout << res;
+    else
+        cout << max(res, ans);
+}
